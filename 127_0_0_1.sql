@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2024 at 08:46 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Sep 22, 2023 at 05:59 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,198 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `admin_feedback`
---
-CREATE DATABASE IF NOT EXISTS `admin_feedback` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `admin_feedback`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `countries`
---
-
-CREATE TABLE `countries` (
-  `country_id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feebback`
---
-
-CREATE TABLE `feebback` (
-  `country` varchar(100) NOT NULL,
-  `state` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `states`
---
-
-CREATE TABLE `states` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_admin`
---
-
-CREATE TABLE `tbl_admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `mobilenumber` bigint(12) NOT NULL,
-  `profileimg` varchar(200) NOT NULL,
-  `email` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_admin`
---
-
-INSERT INTO `tbl_admin` (`id`, `username`, `password`, `mobilenumber`, `profileimg`, `email`) VALUES
-(1, 'admin', 'admin@', 0, '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_feedback`
---
-
-CREATE TABLE `tbl_feedback` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `country` varchar(250) NOT NULL,
-  `state` varchar(200) NOT NULL,
-  `city` varchar(200) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `star` int(10) NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_feedback`
---
-
-INSERT INTO `tbl_feedback` (`id`, `name`, `email`, `country`, `state`, `city`, `phone`, `star`, `date`) VALUES
-(68, '', '', 'Azerbaijan', '', 'ballia', '2147483647', 2, '2024-01-17'),
-(69, '', '', 'Bangladesh', 'Rangamati', 'ballia', '2147483647', 3, '2024-01-17'),
-(70, '', '', 'Australia', 'Australian Capital Territory', 'ballia', '2147483647', 3, '2024-01-17'),
-(71, '', '', 'Australia', '', 'ballia', '2147483647', 3, '2024-01-17'),
-(72, '', '', 'Bangladesh', 'Faridpur', 'ballia', '2147483647', 3, '2024-01-17'),
-(73, '', '', 'Bangladesh', 'Dhaka', 'ballia', '2147483647', 3, '2024-01-17'),
-(74, '', '', 'India', 'Uttar Pradesh', 'Test', '2147483647', 5, '2024-01-17'),
-(75, '', '', 'India', 'Uttar Pradesh', 'ballia', '7317613076', 4, '2024-01-17'),
-(76, '', '', 'India', 'Delhi', 'lucknow', '8878788989', 4, '2024-01-17'),
-(77, '', '', 'Gaza Strip', 'Gaza Strip', 'Test', '6767677687', 0, '2024-01-17'),
-(78, '', '', 'Bahrain', 'Sitrah', 'lucknow', '8798787989', 3, '2024-01-17'),
-(79, '', '', 'Bangladesh', 'Gazipur', 'ballia', '7889909876', 3, '2024-01-17'),
-(80, '', '', 'Northern Mariana Islands', 'Rota', 'Test', '6679897867', 3, '2024-01-17'),
-(81, '', '', 'Bangladesh', 'Gazipur', 'ballia', '6778890989', 5, '2024-01-17'),
-(82, '', '', 'Russia', 'Evenkiyskiy (Tura)', 'Test', '4556677889', 4, '2024-01-17'),
-(83, '', '', 'India', 'Uttar Pradesh', 'LKZo', '8899458545', 3, '2024-01-17');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_feedback1`
---
-
-CREATE TABLE `tbl_feedback1` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `phonecode` varchar(50) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `country` varchar(100) NOT NULL,
-  `state` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  `rate` varchar(50) NOT NULL,
-  `overall_experience` varchar(80) NOT NULL,
-  `hosting_services` varchar(100) NOT NULL,
-  `performance` varchar(100) NOT NULL,
-  `customer` varchar(100) NOT NULL,
-  `uptime` varchar(100) NOT NULL,
-  `price` varchar(100) NOT NULL,
-  `scale` varchar(15) NOT NULL,
-  `specific_features` varchar(1000) NOT NULL,
-  `regarding_our_services` varchar(1000) NOT NULL,
-  `improve_our_services` varchar(1000) NOT NULL,
-  `favorite_feature` varchar(1000) NOT NULL,
-  `communication` varchar(100) NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_feedback1`
---
-
-INSERT INTO `tbl_feedback1` (`id`, `firstname`, `lastname`, `email`, `phonecode`, `phone`, `country`, `state`, `city`, `rate`, `overall_experience`, `hosting_services`, `performance`, `customer`, `uptime`, `price`, `scale`, `specific_features`, `regarding_our_services`, `improve_our_services`, `favorite_feature`, `communication`, `date`) VALUES
-(1, 'Shubham ', 'Singh', 'ershubham2017@gmail.com', '+91', '8840065330', 'India', 'Uttar Pradesh', 'Lucknow ', '5', 'Very satisfied', ' Very easy', 'Extremely satisfied', 'Excellent', 'Very reliable', 'Good value', '8', 'Nothing ', 'Nothing ', 'Nothing ', 'Easy to use ', 'Satisfied', '2024-02-09'),
-(2, 'Soni', 'Nishad', 'soni@genxwebhosting.us', '+91', '132325456665', 'India', 'Uttar Pradesh', 'l', '2', 'Very dissatisfied', 'Neutral', 'Dissatisfied', 'Poor', 'Very Unreliable', 'Neutral', '10', 'ikhygfaapapappapapappaa', 'abc', 'abc', 'abc', 'Satisfied', '2024-05-23'),
-(10, 'anisha', 'verma', 'anisha@gmail.com', '', '347870849', 'object:100', 'object:190', 'lucknow', '2', 'Very satisfied', 'Neutral', 'Dissatisfied', 'Poor', 'Very Reliable', '  Neutral', '', 'fegtrrthyyumk', 'ghcnmjy', 'htjyny', 'nhjmhj', ' Satisfied', '2024-01-22'),
-(11, 'rtg', 'tyh', 'gh@gmail.com', '', '5356', 'object:11', '?', 'erf', '4', 'Neutral', 'Very easy', ' Satisfied', 'Poor', 'Very Reliable', 'Poor value', '3', 'rgfrth', 'tgybnh', 'hn hg', 'hnhj', ' Satisfied', '2024-01-22'),
-(12, 'Soni', 'Nishad', 'soni@genxwebhosting.us', '+299', '8957376152', 'object:85', 'object:285', 'jjj', ' 5', 'Satisfied', 'Neutral', 'Satisfied', 'Average', 'Neutral', 'Neutral', '9', 'hh', 'gggg', 'ggg', 'ggg', 'Neutral', '2024-01-25'),
-(13, 'rr', 'rr', 'rr@com.us', '+93', '08957376152', 'object:3', 'string:Helmand', 'hh', '2', 'Very dissatisfied', 'Easy', 'Neutral', 'Poor', 'Neutral', 'Poor value', '4', 'hhh', 'hh', 'hh', 'hh', 'Neutral', '2024-01-27'),
-(14, 'Soni', 'Nishad', 'soni@genxwebhosting.us', '+30', '08957376152', 'object:84', 'string:Drama Regional Unit', 'gg', '3', 'Dissatisfied', 'Neutral', 'Dissatisfied', 'Poor', 'Neutral', 'Very Poor value', '6', 'g', 'g', 'g', 'g', 'Neutral', '2024-01-27'),
-(15, 'Soni', 'Nishad', 'soni@genxwebhosting.us', '+49', '08957376152', 'object:81', 'string:Saarland', '08957376152', '4', 'Dissatisfied', 'Neutral', 'Dissatisfied', 'Poor', 'Unreliable', 'Very Poor value', '9', 'd', 'd', 'd', 'd', 'Dissatisfied', '2024-01-27');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `Mobile Number` (`id`,`username`);
-
---
--- Indexes for table `tbl_feedback`
---
-ALTER TABLE `tbl_feedback`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_feedback1`
---
-ALTER TABLE `tbl_feedback1`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_feedback`
---
-ALTER TABLE `tbl_feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
-
---
--- AUTO_INCREMENT for table `tbl_feedback1`
---
-ALTER TABLE `tbl_feedback1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Database: `ajax`
 --
@@ -2430,169 +2238,6 @@ ALTER TABLE `tbl_category`
 ALTER TABLE `tbl_product`
   MODIFY `proid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- Database: `home_db`
---
-CREATE DATABASE IF NOT EXISTS `home_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `home_db`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admins`
---
-
-CREATE TABLE `admins` (
-  `id` varchar(20) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admins`
---
-
-INSERT INTO `admins` (`id`, `name`, `password`) VALUES
-('BcjKNX58e4x7bIqIvxG7', 'admin', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2'),
-('2', 'admin', '123456'),
-('NuQMS1DzGXR6LiC4Joqc', 'admin12', '7c4a8d09ca3762af61e59520943dc26494f8941b');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `messages`
---
-
-CREATE TABLE `messages` (
-  `id` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `number` varchar(10) NOT NULL,
-  `message` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `property`
---
-
-CREATE TABLE `property` (
-  `id` varchar(20) NOT NULL,
-  `user_id` varchar(20) NOT NULL,
-  `property_name` varchar(50) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `price` varchar(10) NOT NULL,
-  `type` varchar(10) NOT NULL,
-  `offer` varchar(10) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `furnished` varchar(50) NOT NULL,
-  `bhk` varchar(10) NOT NULL,
-  `deposite` varchar(10) NOT NULL,
-  `bedroom` varchar(10) NOT NULL,
-  `bathroom` varchar(10) NOT NULL,
-  `balcony` varchar(10) NOT NULL,
-  `carpet` varchar(10) NOT NULL,
-  `age` varchar(2) NOT NULL,
-  `total_floors` varchar(2) NOT NULL,
-  `room_floor` varchar(2) NOT NULL,
-  `loan` varchar(50) NOT NULL,
-  `lift` varchar(3) NOT NULL DEFAULT 'no',
-  `security_guard` varchar(3) NOT NULL DEFAULT 'no',
-  `play_ground` varchar(3) NOT NULL DEFAULT 'no',
-  `garden` varchar(3) NOT NULL DEFAULT 'no',
-  `water_supply` varchar(3) NOT NULL DEFAULT 'no',
-  `power_backup` varchar(3) NOT NULL DEFAULT 'no',
-  `parking_area` varchar(3) NOT NULL DEFAULT 'no',
-  `gym` varchar(3) NOT NULL DEFAULT 'no',
-  `shopping_mall` varchar(3) NOT NULL DEFAULT 'no',
-  `hospital` varchar(3) NOT NULL DEFAULT 'no',
-  `school` varchar(3) NOT NULL DEFAULT 'no',
-  `market_area` varchar(3) NOT NULL DEFAULT 'no',
-  `image_01` varchar(50) NOT NULL,
-  `image_02` varchar(50) NOT NULL,
-  `image_03` varchar(50) NOT NULL,
-  `image_04` varchar(50) NOT NULL,
-  `image_05` varchar(50) NOT NULL,
-  `description` varchar(1000) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `property`
---
-
-INSERT INTO `property` (`id`, `user_id`, `property_name`, `address`, `price`, `type`, `offer`, `status`, `furnished`, `bhk`, `deposite`, `bedroom`, `bathroom`, `balcony`, `carpet`, `age`, `total_floors`, `room_floor`, `loan`, `lift`, `security_guard`, `play_ground`, `garden`, `water_supply`, `power_backup`, `parking_area`, `gym`, `shopping_mall`, `hospital`, `school`, `market_area`, `image_01`, `image_02`, `image_03`, `image_04`, `image_05`, `description`, `date`) VALUES
-('fvqwqHARxGxEOT8EtDIl', 'bbmf7aJjWFZTtZ4Yaak6', 'for sale ', ' lko', '200000', 'flat', 'sale', 'ready to move', 'furnished', '1', '5000', '1', '2', '2', '500', '2', '5', '2', 'available', 'no', 'no', 'no', 'yes', 'no', 'no', 'yes', 'no', 'no', 'no', 'no', 'no', 'Jy9i663vfRsD0Z529l1H.png', '', '', '', '', 'm', '2024-07-23'),
-('duQUghBNjabIfMYQRp7w', 'jc0N8SjsIhxnAxEBcYhB', 'for sale ', 'gjgj', '8896532', 'flat', 'sale', 'ready to move', 'furnished', '1', '1212', '1', '1', '0', '654', '4', '2', '4', 'available', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'yes', 'no', 'no', 'no', 'no', 'B26lS0FL9eNJjDF50xRm.jpg', '', '', '', '', 'jhvj', '2024-08-01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `requests`
---
-
-CREATE TABLE `requests` (
-  `id` varchar(20) NOT NULL,
-  `property_id` varchar(20) NOT NULL,
-  `sender` varchar(20) NOT NULL,
-  `receiver` varchar(20) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `requests`
---
-
-INSERT INTO `requests` (`id`, `property_id`, `sender`, `receiver`, `date`) VALUES
-('NdWAvO9ZySd9eRshmCOQ', 'fvqwqHARxGxEOT8EtDIl', 'bbmf7aJjWFZTtZ4Yaak6', 'bbmf7aJjWFZTtZ4Yaak6', '2024-07-23'),
-('rVvgpjv1XQTpvsep41EE', 'fvqwqHARxGxEOT8EtDIl', 'ZBCBBzW8Nqso5Jo4iwbJ', 'bbmf7aJjWFZTtZ4Yaak6', '2024-07-30'),
-('icZE0zO5K44JSaK4j6E1', 'fvqwqHARxGxEOT8EtDIl', 'jc0N8SjsIhxnAxEBcYhB', 'bbmf7aJjWFZTtZ4Yaak6', '2024-08-01'),
-('J8GtznBPFzDDkzWYPTia', 'duQUghBNjabIfMYQRp7w', 'AvHVEtRsDrfgoICreiZY', 'jc0N8SjsIhxnAxEBcYhB', '2024-08-01'),
-('GPGRJvwilli6weMhrsDF', 'duQUghBNjabIfMYQRp7w', 'ZBCBBzW8Nqso5Jo4iwbJ', 'jc0N8SjsIhxnAxEBcYhB', '2024-08-01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `saved`
---
-
-CREATE TABLE `saved` (
-  `id` varchar(20) NOT NULL,
-  `property_id` varchar(20) NOT NULL,
-  `user_id` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `saved`
---
-
-INSERT INTO `saved` (`id`, `property_id`, `user_id`) VALUES
-('ZZV5yWMYlU91iCGCPBUQ', 'fvqwqHARxGxEOT8EtDIl', 'ZBCBBzW8Nqso5Jo4iwbJ');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `number` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `number`, `email`, `password`) VALUES
-('bbmf7aJjWFZTtZ4Yaak6', 'abc', '123654987', 'abc@gamil.com', 'ddac418a1be76098d01107464026f65d2a3192bf'),
-('ZBCBBzW8Nqso5Jo4iwbJ', 'abc', '123654970', 'abc@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964'),
-('jc0N8SjsIhxnAxEBcYhB', 'new ', '123654', 'new@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b'),
-('AvHVEtRsDrfgoICreiZY', 'test', '798', 'test@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b');
---
 -- Database: `hospital`
 --
 CREATE DATABASE IF NOT EXISTS `hospital` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -2788,471 +2433,6 @@ ALTER TABLE `tbl_login`
 --
 ALTER TABLE `tbl_register`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
---
--- Database: `ida`
---
-CREATE DATABASE IF NOT EXISTS `ida` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ida`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `driver_info`
---
-
-CREATE TABLE `driver_info` (
-  `id` int(11) NOT NULL,
-  `driver_mode` varchar(50) NOT NULL,
-  `driver_name` varchar(255) NOT NULL,
-  `driver_photo` varchar(255) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `dl_number` varchar(50) NOT NULL,
-  `area_postal_code` varchar(10) NOT NULL,
-  `address` text NOT NULL,
-  `license_expiry` date NOT NULL,
-  `vehicle_type` varchar(50) NOT NULL,
-  `signature_file` varchar(255) DEFAULT NULL,
-  `signature_data` text DEFAULT NULL,
-  `registration_date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `driver_info`
---
-
-INSERT INTO `driver_info` (`id`, `driver_mode`, `driver_name`, `driver_photo`, `phone`, `dl_number`, `area_postal_code`, `address`, `license_expiry`, `vehicle_type`, `signature_file`, `signature_data`, `registration_date`) VALUES
-(1, 'Standard', 's', 'driver_6708cf30bb08d5.67696337.jpg', '5678965412', 'kk1', '85', 'pk', '0000-00-00', 'bus', 'signature_6708cf30bb2a85.98637904.png', NULL, '2024-10-01 12:28:43'),
-(2, 'Standard', 'a', 'driver_6708d0e731f3f1.04869116.jpg', '8965741230', 'kk4', '789', 'lko', '0000-00-00', 'bus', 'signature_6708d0e7320af7.89294098.png', NULL, '2024-10-11 12:28:43'),
-(4, 'Standard', 'k', 'driver_670cb438154677.34456475.jpg', '54', 'k45', '565', 'bj', '0000-00-00', 'bus', 'signature_670cb4381563e2.37066995.jpeg', NULL, '2024-10-12 12:28:43'),
-(5, 'Standard', 'raj', 'driver_670ccbc6e40c35.77621298.jpg', '68', 'hbh5', '2', 'lk', '0000-00-00', 'bus', 'signature_670ccbc6e46911.10696837.jpg', NULL, '2024-10-02 12:28:43'),
-(6, 'Standard', 'chunnu', 'driver_670ccc1230d190.52585185.jpg', 'j8', 'jj', '5', 'kjk', '0000-00-00', 'motorcycle', 'signature_670ccc1230e427.17347900.png', NULL, '2024-10-12 12:28:43'),
-(7, 'Standard', 'munni', 'driver_670ccd4cb210c4.76726806.jpg', '789', 'k5', 'l78', 'jhj', '0000-00-00', 'car', 'signature_670ccd4cb22c46.06225205.png', NULL, '2024-10-14 12:28:43'),
-(8, 'Standard', 'pinnki', 'driver_670ccd79723cb1.82862152.jpeg', '899', '5', 'j', 'kjj', '0000-00-00', 'motorcycle', 'signature_670ccd79725601.96913457.jpg', NULL, '2024-10-14 12:28:43'),
-(9, 'Standard', 'demo2', 'driver_670fba58de4b64.20325438.jpeg', 'vf', '55', '85', 'kk', '0000-00-00', 'truck', 'signature_670fba58dea7e4.51461949.png', NULL, '2024-10-14 12:28:43'),
-(10, 'Standard', 'ddemonew', 'driver_6710affc2589f9.65080356.jpeg', '87874', 'dff5', '45', 'ljk', '0000-00-00', 'car', 'signature_6710affc25d913.51120068.png', NULL, '2024-10-17 12:28:43'),
-(11, 'Standard', 'd', 'driver_6710b0724cfb53.47954049.jpeg', '5', 'd', 'd', 'd', '0000-00-00', 'car', 'signature_6710b0724d1164.33569644.png', NULL, '2024-10-17 12:28:43'),
-(12, 'Standard', 'dd', 'driver_6710b0f2e5e326.88721502.jpeg', 'fs', '1', '2', 'x', '0000-00-00', 'car', 'signature_6710b0f2e60ca3.91233414.png', NULL, '2024-10-17 12:28:43'),
-(13, 'Standard', 'sssss', 'driver_6710b6d6e109b3.41169197.jpeg', '98945', 'hj5', '78', 'hg', '0000-00-00', 'car', 'signature_6710b6d6e13520.58707958.png', NULL, '2024-10-17 12:33:50');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `forms_filled`
---
-
-CREATE TABLE `forms_filled` (
-  `id` int(11) NOT NULL,
-  `staff_id` varchar(50) NOT NULL,
-  `form_name` varchar(255) NOT NULL,
-  `submission_time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `group_links`
---
-
-CREATE TABLE `group_links` (
-  `id` int(11) NOT NULL,
-  `whatsapp_link` varchar(255) NOT NULL,
-  `telegram_link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `group_links`
---
-
-INSERT INTO `group_links` (`id`, `whatsapp_link`, `telegram_link`) VALUES
-(1, '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `expires_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staff_members`
---
-
-CREATE TABLE `staff_members` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `staff_id` varchar(50) NOT NULL,
-  `staff_name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `status` enum('active','inactive') DEFAULT 'active',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `staff_members`
---
-
-INSERT INTO `staff_members` (`id`, `staff_id`, `staff_name`, `email`, `phone`, `password`, `status`, `created_at`) VALUES
-(27, 'Staff003', 'news', 'news@gmail.com', '789654', '12345', 'active', '2024-10-11 09:20:49'),
-(30, 'Staff005', 'soni', 'soni@gmail.com', '896574123', '1234', 'active', '2024-10-14 08:33:54');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`) VALUES
-(25, 'Admin', 'admin@admin.com', '$2y$10$peh94Z.mZ28kkTxAw/RDPOaIrf69y/voEt5ss5y1frXA6EcvQ4vx.', '2024-09-27 05:57:10'),
-(26, 'S', 'nishad104@gmail.com', '$2y$10$gIeqZ.SmEpnjrZIrDWry6Our.z7ng7S9GTAQ4R8fojf0IK9LLN4tu', '2024-10-11 06:15:37'),
-(27, 'demo', 'demo@gmail.com', '$2y$10$V6lcJJCX88jR9sejW9U8Qug3y8cW68KEBxllH1ZSg.PMI330H7lPG', '2024-10-11 06:34:38'),
-(28, 'somika', 'somika@gmail.com', '$2y$10$GtW5P6u920Vdjo5OUdAbDeCHaMgNQpgD8DPGxIjXoIUiCZkbLqezS', '2024-10-14 08:42:52');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `driver_info`
---
-ALTER TABLE `driver_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `group_links`
---
-ALTER TABLE `group_links`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `token` (`token`);
-
---
--- Indexes for table `staff_members`
---
-ALTER TABLE `staff_members`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `driver_info`
---
-ALTER TABLE `driver_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `group_links`
---
-ALTER TABLE `group_links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `password_resets`
---
-ALTER TABLE `password_resets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `staff_members`
---
-ALTER TABLE `staff_members`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  ADD CONSTRAINT `forms_filled_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff_members` (`staff_id`) ON DELETE CASCADE;
---
--- Database: `ida2`
---
-CREATE DATABASE IF NOT EXISTS `ida2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ida2`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `driver_info`
---
-
-CREATE TABLE `driver_info` (
-  `id` int(11) NOT NULL,
-  `staff_id` int(50) NOT NULL,
-  `driver_mode` varchar(50) NOT NULL,
-  `driver_name` varchar(255) NOT NULL,
-  `driver_photo` varchar(255) DEFAULT NULL,
-  `phone` varchar(15) NOT NULL,
-  `dl_number` varchar(20) NOT NULL,
-  `area_postal_code` varchar(10) NOT NULL,
-  `address` text NOT NULL,
-  `dob` date NOT NULL,
-  `license_number` varchar(50) NOT NULL,
-  `license_expiry` date NOT NULL,
-  `vehicle_type` enum('car','truck','motorcycle','bus') NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `signature_image` varchar(255) DEFAULT NULL,
-  `signature_data` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `forms_filled`
---
-
-CREATE TABLE `forms_filled` (
-  `id` int(11) NOT NULL,
-  `staff_id` varchar(50) NOT NULL,
-  `form_name` varchar(255) NOT NULL,
-  `submission_time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `group_links`
---
-
-CREATE TABLE `group_links` (
-  `id` int(11) NOT NULL,
-  `whatsapp_link` varchar(255) NOT NULL,
-  `telegram_link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `group_links`
---
-
-INSERT INTO `group_links` (`id`, `whatsapp_link`, `telegram_link`) VALUES
-(1, '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `expires_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staff_members`
---
-
-CREATE TABLE `staff_members` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `staff_id` varchar(50) NOT NULL,
-  `staff_name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `status` enum('active','inactive') DEFAULT 'active',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`) VALUES
-(25, 'Admin', 'admin@admin.com', '$2y$10$peh94Z.mZ28kkTxAw/RDPOaIrf69y/voEt5ss5y1frXA6EcvQ4vx.', '2024-09-27 05:57:10');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `driver_info`
---
-ALTER TABLE `driver_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `group_links`
---
-ALTER TABLE `group_links`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `token` (`token`);
-
---
--- Indexes for table `staff_members`
---
-ALTER TABLE `staff_members`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `staff_id` (`staff_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `driver_info`
---
-ALTER TABLE `driver_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `group_links`
---
-ALTER TABLE `group_links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `password_resets`
---
-ALTER TABLE `password_resets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `staff_members`
---
-ALTER TABLE `staff_members`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `forms_filled`
---
-ALTER TABLE `forms_filled`
-  ADD CONSTRAINT `forms_filled_ibfk_1` FOREIGN KEY (`staff_id`) REFERENCES `staff_members` (`staff_id`) ON DELETE CASCADE;
---
--- Database: `laravel-learing`
---
-CREATE DATABASE IF NOT EXISTS `laravel-learing` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `laravel-learing`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `firstproject`
---
-
-CREATE TABLE `firstproject` (
-  `id` int(50) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `firstproject`
---
-
-INSERT INTO `firstproject` (`id`, `name`, `email`, `password`) VALUES
-(1, 'bittu', 'bittu@gmail.com', 1234);
 --
 -- Database: `laraveldb`
 --
@@ -4675,7 +3855,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"rent-right-banglore\",\"table\":\"customer_register\"},{\"db\":\"rent-right-banglore\",\"table\":\"contact_requests\"},{\"db\":\"rent-right-banglore\",\"table\":\"properties\"},{\"db\":\"rent-right-banglore\",\"table\":\"admin_register\"},{\"db\":\"ida\",\"table\":\"driver_info\"},{\"db\":\"ida2\",\"table\":\"staff_members\"},{\"db\":\"ida2\",\"table\":\"users\"},{\"db\":\"ida\",\"table\":\"staff_members\"},{\"db\":\"ida2\",\"table\":\"driver_info\"},{\"db\":\"ida\",\"table\":\"users\"}]');
+('root', '[{\"db\":\"nurseray_plant\",\"table\":\"about\"},{\"db\":\"nurseray_plant\",\"table\":\"testimonial\"},{\"db\":\"nurseray_plant\",\"table\":\"slider\"},{\"db\":\"nurseray_plant\",\"table\":\"header\"},{\"db\":\"nurseray_plant\",\"table\":\"admin_login\"},{\"db\":\"dynamicp1\",\"table\":\"admin_login\"}]');
 
 -- --------------------------------------------------------
 
@@ -4782,7 +3962,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2024-10-04 11:08:58', '{\"Console\\/Mode\":\"collapse\"}');
+('root', '2023-05-15 06:35:10', '{\"Console\\/Mode\":\"collapse\",\"lang\":\"en_GB\"}');
 
 -- --------------------------------------------------------
 
@@ -4971,466 +4151,26 @@ ALTER TABLE `pma__pdf_pages`
 ALTER TABLE `pma__savedsearches`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- Database: `poorva_projct`
+-- Database: `practicedemo`
 --
-CREATE DATABASE IF NOT EXISTS `poorva_projct` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `poorva_projct`;
+CREATE DATABASE IF NOT EXISTS `practicedemo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `practicedemo`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contacts`
---
-
-CREATE TABLE `contacts` (
-  `id` int(6) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `message` text NOT NULL,
-  `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
-(1, 'Soni nishad', 'nishadsoni104@gmail.com', 'jhgjgj', '2024-09-25 06:49:31');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `contacts`
---
-ALTER TABLE `contacts`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- Database: `rent-right-banglore`
---
-CREATE DATABASE IF NOT EXISTS `rent-right-banglore` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `rent-right-banglore`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin_register`
---
-
-CREATE TABLE `admin_register` (
-  `id` int(50) NOT NULL,
-  `username` varchar(200) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admin_register`
---
-
-INSERT INTO `admin_register` (`id`, `username`, `email`, `password`) VALUES
-(2, 'admin1', 'admin@gmail.com', '$2y$10$SNMUA73JTK4nNYbjC2ThteimF964yOK3uZv8Jottv2D5IerVHMu0q');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bhk_searches`
---
-
-CREATE TABLE `bhk_searches` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bhk_searches`
---
-
-INSERT INTO `bhk_searches` (`id`, `name`) VALUES
-(2, '1 BHK Flats in Bangalore'),
-(3, '2 BHK Flats in Bangalore'),
-(4, '3 BHK Flats in Bangalore'),
-(5, '4 BHK Flats in Bangalore ');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bookings`
---
-
-CREATE TABLE `bookings` (
-  `id` int(11) NOT NULL,
-  `booking_id` varchar(225) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `mobile` varchar(10) NOT NULL,
-  `address` text NOT NULL,
-  `payment_mode` varchar(50) NOT NULL,
-  `booking_date` date NOT NULL,
-  `submit_date` date NOT NULL,
-  `service_name` varchar(255) DEFAULT NULL,
-  `booking_status` varchar(255) DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`id`, `booking_id`, `name`, `email`, `mobile`, `address`, `payment_mode`, `booking_date`, `submit_date`, `service_name`, `booking_status`) VALUES
-(8, 'booking_66b0c6cde02a29.51885704', 'Soni nishad', 'nishadsoni104@gmail.com', '8005089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-21', '2024-08-05', 'Electrician', 'pending'),
-(9, 'booking_66b0c75ed8ca17.65985298', 'Soni ', 'soni104@gmail.com', '8005089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-21', '2024-08-05', 'Water Purifier', 'Cancel'),
-(11, 'booking_66b5a72845b452.26310403', 'Soni Nishad', 'soni@genxwebhosting.us', '8005089374', 'Rustam Vihar Colony Near Cipet College', 'cash', '2024-08-30', '2024-08-09', 'Electrician', 'pending'),
-(12, 'booking_66bca2a200ffd7.57618383', 'montu', 'montu@gmail.com', '8520741963', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-16', '2024-08-14', 'kjkbk', 'pending'),
-(13, 'booking_66bca37da92fd2.64188136', 'minu', 'minu@gmail.com', '8965741230', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-31', '2024-08-14', '3BHK', 'pending'),
-(14, 'booking_66d19666251da8.96372734', 'ee', 'ss@gmail.com', '2365987410', 'jh', 'cash', '2024-08-15', '2024-08-30', 'service2', 'pending'),
-(17, 'booking_6707b8f0eb3b86.14292262', 'Soni nishad', 'nishadsoni104@gmail.com', '0800089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-10-24', '2024-10-10', 'Fabrication', 'pending'),
-(18, 'booking_6707bd5a4ac623.02053932', 'Soni nishad', 'nishadsoni104@gmail.com', '0855089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-11-01', '2024-10-10', 'Plumbing', 'pending');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `contact_requests`
---
-
-CREATE TABLE `contact_requests` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `contacted_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customer_register`
---
-
-CREATE TABLE `customer_register` (
-  `id` int(100) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `emailaddress` varchar(100) NOT NULL,
-  `phonenumber` varchar(20) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `date` varchar(60) NOT NULL,
-  `status` enum('active','blocked') DEFAULT 'active',
-  `user_unique_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `customer_register`
---
-
-INSERT INTO `customer_register` (`id`, `name`, `emailaddress`, `phonenumber`, `password`, `date`, `status`, `user_unique_id`) VALUES
-(1, 'soumya', 'soumya@gmail.com', '85962520', '$2y$10$uhRzGcf1.utlvU2GF9gM2.2Qjf2ucAb89XPFzG6omeUR0269RE6Gq', '2024-07-31 08:11:35', 'active', 'user_66a9d597800973.47838801'),
-(3, 'user', 'user@gmail.com', '2147483647', '$2y$10$WVgx7jVJucH.jnFVvEevm.Lr.hVwDNbo2Pw5BbghhZrZsxOqiMBWm', '2024-07-31 08:31:44', 'active', 'user_66a9da5093a2e2.66230031'),
-(4, 'newuser', 'nuser@gmail.com', '4454546565', '$2y$10$UBXDAa6301EIOCdBR4nqiO7aA1kRef6GgHaVtyJjCCrp1SXaplhGK', '2024-08-01 10:12:41', 'active', 'user_66ab43799fd7d6.75380354'),
-(7, 'Soni ', 's@gmmail.com', '8520963147', '$2y$10$tpG8EEH6IdyPrB4Sd.ZwnuuydebDnD982CHVZeujkPsKUGBv.oMQ2', '2024-08-09 11:38:05', 'active', 'user_66b5e37d6fa6e5.60555237'),
-(8, 'Soni nishad', 'nishadsoni104@gmail.com', '08005089374', '$2y$10$l5MxHRcp3K8RiNgQWw8B4Ow1eJg85lqEu4c0375w24QwQmTR4hTpS', '2024-08-14 12:57:07', 'active', 'user_66bc8d836c7192.83988861');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dropdown_values`
---
-
-CREATE TABLE `dropdown_values` (
-  `id` int(11) NOT NULL,
-  `value` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `dropdown_values`
---
-
-INSERT INTO `dropdown_values` (`id`, `value`) VALUES
-(1, 'Rent'),
-(2, 'Sale'),
-(3, 'Commercial'),
-(4, 'Movers & Packers'),
-(5, 'Electrician'),
-(6, 'Plumbing'),
-(7, 'Cleaning services'),
-(8, 'Interiors'),
-(9, 'Exteriors');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `enquiries`
---
-
-CREATE TABLE `enquiries` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `enquiries`
---
-
-INSERT INTO `enquiries` (`id`, `user_id`, `property_id`, `message`, `created_at`) VALUES
-(2, 4, 2, 'test test hjhjhhhj hhggjhjhkjbvn', '2024-08-07 18:18:10'),
-(4, 1, 16, 'hyy new userrrr', '2024-08-07 18:23:24'),
-(5, 1, 2, 'hyyy test test hhyyy hhyy tset tset', '2024-08-07 18:24:42'),
-(8, 3, 3, 'hgvcgcg   hgvgvy   hggggu  hgghggh uygyg ', '2024-09-02 19:03:32'),
-(10, 3, 9, 'hlo hyy hyyy hyyy ', '2024-10-04 14:02:14'),
-(11, 3, 16, 'jhvjhvgjvgjvghvgvgvhgvgvgvgjvjgvjcgcgcgj', '2024-10-10 17:18:12');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `enquiry`
---
-
-CREATE TABLE `enquiry` (
-  `id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `enquiry`
---
-
-INSERT INTO `enquiry` (`id`, `property_id`, `user_id`, `message`, `created_at`) VALUES
-(20, 8, 1, 'hghgghgfchg fhftcyy vhg', '2024-08-03 12:38:18'),
-(21, 2, 4, 'User ID: 4 has sent an enquiry for Property ID: 2.', '2024-08-07 11:43:15');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `invoices`
---
-
-CREATE TABLE `invoices` (
-  `id` int(11) NOT NULL,
-  `customer_name` varchar(255) NOT NULL,
-  `email` varchar(225) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `bill_no` int(11) NOT NULL,
-  `amount` decimal(10,2) NOT NULL,
-  `tax` decimal(10,2) NOT NULL,
-  `total_amount` decimal(10,2) NOT NULL,
-  `invoice_date` date NOT NULL,
-  `due_date` date NOT NULL,
-  `status` enum('Active','Paid','Overdue') NOT NULL DEFAULT 'Active',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `invoices`
---
-
-INSERT INTO `invoices` (`id`, `customer_name`, `email`, `address`, `bill_no`, `amount`, `tax`, `total_amount`, `invoice_date`, `due_date`, `status`, `created_at`) VALUES
-(3, 'soni', '', 'lko', 1, 5000.00, 20.00, 5020.00, '2024-08-16', '2024-08-15', 'Paid', '2024-08-05 03:39:39'),
-(4, 'soni', '', 'kanpur', 2, 5000.00, 20.00, 5020.00, '2024-08-16', '2024-08-15', 'Overdue', '2024-08-05 03:41:44'),
-(5, 'soni', '', 'noida', 3, 5000.00, 20.00, 5020.00, '2024-08-16', '2024-08-15', 'Overdue', '2024-08-05 04:12:55'),
-(6, 'soni', '', 'delhi', 4, 5000.00, 20.00, 5020.00, '2024-08-16', '2024-08-15', 'Overdue', '2024-08-05 04:15:50');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `owner_messages`
---
-
-CREATE TABLE `owner_messages` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `owner_messages`
---
-
-INSERT INTO `owner_messages` (`id`, `user_id`, `property_id`, `message`, `created_at`) VALUES
-(3, 4, 8, 'hyyy me soni', '2024-08-04 09:49:04'),
-(8, 4, 8, 'bbhg', '2024-08-07 11:53:48');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `payments`
---
-
-CREATE TABLE `payments` (
-  `payment_id` int(11) NOT NULL,
-  `booking_id` int(11) NOT NULL,
-  `amount` decimal(10,2) NOT NULL,
-  `payment_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `invoice_updated` enum('pending','updated') NOT NULL DEFAULT 'pending',
-  `payment_status` enum('pending','paid','failed') NOT NULL DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `properties`
---
-
-CREATE TABLE `properties` (
-  `id` int(11) NOT NULL,
-  `bhk_type` varchar(50) DEFAULT NULL,
-  `property_type` varchar(50) DEFAULT NULL,
-  `build_up_area` float DEFAULT NULL,
-  `property_age` varchar(50) DEFAULT NULL,
-  `floor` int(11) DEFAULT NULL,
-  `total_floor` int(11) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
-  `available_for` varchar(100) DEFAULT NULL,
-  `expected_rent` decimal(10,2) DEFAULT NULL,
-  `expected_deposit` decimal(10,2) DEFAULT NULL,
-  `maintenance` varchar(50) DEFAULT NULL,
-  `available_from` date DEFAULT NULL,
-  `preferred_tenants` varchar(100) DEFAULT NULL,
-  `furnishing` varchar(50) DEFAULT NULL,
-  `parking` varchar(50) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `bathrooms` int(11) DEFAULT NULL,
-  `balcony` int(11) DEFAULT NULL,
-  `water_supply` varchar(50) DEFAULT NULL,
-  `amenities` varchar(255) DEFAULT NULL,
-  `file_upload` varchar(255) NOT NULL,
-  `availability` varchar(255) NOT NULL,
-  `start_time` time DEFAULT NULL,
-  `end_time` time DEFAULT NULL,
-  `available_all` tinyint(4) DEFAULT NULL,
-  `created_at` datetime DEFAULT current_timestamp(),
-  `user_id` int(11) NOT NULL,
-  `property_status` varchar(50) DEFAULT 'Pending',
-  `date` date NOT NULL DEFAULT curdate(),
-  `approval_status` varchar(20) DEFAULT 'Pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `properties`
---
-
-INSERT INTO `properties` (`id`, `bhk_type`, `property_type`, `build_up_area`, `property_age`, `floor`, `total_floor`, `city`, `available_for`, `expected_rent`, `expected_deposit`, `maintenance`, `available_from`, `preferred_tenants`, `furnishing`, `parking`, `description`, `bathrooms`, `balcony`, `water_supply`, `amenities`, `file_upload`, `availability`, `start_time`, `end_time`, `available_all`, `created_at`, `user_id`, `property_status`, `date`, `approval_status`) VALUES
-(2, '4BHK', 'Building', 2000, '5', 2, 5, 'Hong Kong', 'Sale,Only Lease', 800.00, 78.00, NULL, '2024-09-18', NULL, 'Fully-Furnished', NULL, 'sonini', 1, 1, 'Municipal', 'House Keeping', '../uploads/hiring.png', '', '00:00:00', '00:00:00', 1, '2024-07-15 11:55:34', 2, 'Pending', '2024-07-31', 'Pending'),
-(3, '3BHK', 'Site', 2000, '10', 5, 10, 'Delhi, India', 'Rent', 500000.00, 10000.00, 'Maintenance Included', '2024-07-10', 'Family', 'Unfurnished', 'all', 'hgfjygju', 2, 3, 'Municipal', 'Play Area,Club House,Internet Service', '../uploads/1 (10).jpg', 'Weekend (Sat-Sun)', '00:00:00', '00:00:00', 0, '2024-07-31 12:03:42', 3, 'Focus', '2024-07-31', 'Approved'),
-(8, 'kjkbk', 'Commercial', 0, '65', 0, 5, 'Lucknow, Uttar Pradesh, India', 'for rent', 50.00, 4.00, '', '2024-09-01', 'company', 'kjbk', '', 'jbkbuk', 1, 1, 'borewell', 'Gym', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg,../uploads/1 (10).jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:07:29', 4, 'Spotlight', '2024-08-01', 'Rejected'),
-(9, '2 bhk', 'Villa', 500, '5', 0, 0, 'Kanpur, Uttar Pradesh, India', 'Rent', 20000.00, 0.00, '', '2024-08-09', '', 'Fully-Furnished', '', 'hjb', 1, 1, 'all', 'Gym', '../uploads/house-isolated-field.jpg,../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:09:03', 4, 'Focus', '2024-08-01', 'Rejected'),
-(15, '2BHK', 'Site', 5000, '5', 4, 10, 'Mumbai, Maharashtra, India', '', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', '', '', '', '00:00:00', '00:00:00', 0, '2024-08-06 17:33:33', 4, 'Featured', '2024-08-06', 'Rejected'),
-(16, '3BHK', 'Building', 200, '5', 4, 4, 'Karnataka', 'Sale', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', 'Gym, Power Backup', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', 'Weekday (Mon-Fri)', '19:56:00', '21:57:00', 0, '2024-08-06 17:57:09', 4, 'Featured', '2024-08-06', 'Approved'),
-(32, '2BHK', 'Building', 200, '3', 10, 2, 'India', 'Sale', 10.00, 6.00, '', '2024-10-29', 'Family', 'Semi-Furnished', '', 'nbbh', 1, 1, 'Borewell', 'Gym,Visitor Parking', '../uploads/right-to-property-is-a-legal-right.jpg,../uploads/istockphoto-1409298953-612x612.jpg,../uploads/photo-1560518883-ce09059eeffa.jpeg,../uploads/istockphoto-1319269543-612x612.jpg', 'Weekday (Mon-Fri)', '00:00:00', '16:55:00', 0, '2024-09-03 16:52:30', 3, 'Trending', '2024-09-03', 'Rejected'),
-(33, 'IndependentHouse', 'Villa', 2000, '2', 4, 5, 'HSR Layout, Bengaluru, Karnataka, India', 'Rent', 23.00, 0.00, '', '2024-10-10', '', 'Semi-Furnished', '', 'k', 1, 1, 'Borewell', 'Gym,Power Backup', '../uploads/IMG_20240923_182822_516.jpg,../uploads/IMG_20240923_182819_597.jpg,../uploads/IMG_20240923_182818_375.jpg,../uploads/IMG_20240923_182804_738.jpg,../uploads/IMG_20240923_182824_252.jpg,../uploads/IMG_20240923_182807_959.jpg', '', '00:00:00', '00:00:00', 0, '2024-09-06 11:20:52', 3, 'Trending', '2024-09-06', 'Pending');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `saved_properties`
---
-
-CREATE TABLE `saved_properties` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `saved_properties`
---
-
-INSERT INTO `saved_properties` (`id`, `user_id`, `property_id`, `created_at`) VALUES
-(77, 4, 1, '2024-08-01 09:06:41'),
-(78, 1, 9, '2024-08-01 17:23:41'),
-(80, 4, 8, '2024-08-03 12:51:13'),
-(82, 2, 2, '2024-09-02 13:36:02'),
-(83, 3, 9, '2024-10-04 08:31:26');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `save_items`
---
-
-CREATE TABLE `save_items` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `save_items`
---
-
-INSERT INTO `save_items` (`id`, `user_id`, `property_id`) VALUES
-(11, 4, 8),
-(13, 4, 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `scheduled_visits`
---
-
-CREATE TABLE `scheduled_visits` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `property_id` int(11) NOT NULL,
-  `visit_date` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `services`
---
-
-CREATE TABLE `services` (
-  `id` int(11) NOT NULL,
-  `service_img` varchar(255) NOT NULL,
-  `service_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `services`
---
-
-INSERT INTO `services` (`id`, `service_img`, `service_name`) VALUES
-(4, '66d190bb11c07.png', 'Painting'),
-(5, '66d1910b34131.png', 'Packers & Movers'),
-(7, '66d2c96d61caa.png', 'Electrician'),
-(8, '66d2c99bc8234.png', 'Plumbing'),
-(9, '66d2c9b34cbee.png', 'Fabrication'),
-(10, '66d2c9cf97717.png', 'Carpenter'),
-(11, '66d2c9ede0c9a.png', 'Lift Service'),
-(12, '6707b28155517.jpg', 'demo');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+-- Table structure for table `student_registration`
+--
+
+CREATE TABLE `student_registration` (
+  `roll` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `gender` varchar(7) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `branch` varchar(50) NOT NULL,
+  `year` varchar(10) NOT NULL,
+  `contactno` varchar(13) NOT NULL,
+  `emailaddress` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -5438,345 +4178,133 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `admin_register`
+-- Indexes for table `student_registration`
 --
-ALTER TABLE `admin_register`
+ALTER TABLE `student_registration`
+  ADD PRIMARY KEY (`roll`);
+--
+-- Database: `restorant`
+--
+CREATE DATABASE IF NOT EXISTS `restorant` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `restorant`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_login`
+--
+
+CREATE TABLE `admin_login` (
+  `id` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `account_name` varchar(50) NOT NULL,
+  `username` varchar(60) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin_login`
+--
+
+INSERT INTO `admin_login` (`id`, `image`, `account_name`, `username`, `password`) VALUES
+(1, '1 (17).jpg', 'Administrator', 'admin', 'admin12345');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_login`
+--
+ALTER TABLE `admin_login`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `bhk_searches`
---
-ALTER TABLE `bhk_searches`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `bookings`
---
-ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `contact_requests`
---
-ALTER TABLE `contact_requests`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `property_id` (`property_id`);
-
---
--- Indexes for table `customer_register`
---
-ALTER TABLE `customer_register`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `dropdown_values`
---
-ALTER TABLE `dropdown_values`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `enquiries`
---
-ALTER TABLE `enquiries`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `property_id` (`property_id`);
-
---
--- Indexes for table `enquiry`
---
-ALTER TABLE `enquiry`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `enquiry_ibfk_1` (`property_id`);
-
---
--- Indexes for table `invoices`
---
-ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `bill_no` (`bill_no`);
-
---
--- Indexes for table `owner_messages`
---
-ALTER TABLE `owner_messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `payments`
---
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`payment_id`),
-  ADD KEY `booking_id` (`booking_id`);
-
---
--- Indexes for table `properties`
---
-ALTER TABLE `properties`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `saved_properties`
---
-ALTER TABLE `saved_properties`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `save_items`
---
-ALTER TABLE `save_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `property_id` (`property_id`);
-
---
--- Indexes for table `scheduled_visits`
---
-ALTER TABLE `scheduled_visits`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `services`
---
-ALTER TABLE `services`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin_register`
+-- AUTO_INCREMENT for table `admin_login`
 --
-ALTER TABLE `admin_register`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `admin_login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Database: `session`
+--
+CREATE DATABASE IF NOT EXISTS `session` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `session`;
+
+-- --------------------------------------------------------
 
 --
--- AUTO_INCREMENT for table `bhk_searches`
+-- Table structure for table `tbl_register`
 --
-ALTER TABLE `bhk_searches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+CREATE TABLE `tbl_register` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `gender` varchar(7) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `mobile` varchar(13) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `conpassword` varchar(50) NOT NULL,
+  `photo_name` varchar(50) NOT NULL,
+  `photo_type` varchar(50) NOT NULL,
+  `photo_tmp` varchar(50) NOT NULL,
+  `occupation` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- AUTO_INCREMENT for table `bookings`
+-- Dumping data for table `tbl_register`
 --
-ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+INSERT INTO `tbl_register` (`id`, `name`, `gender`, `email`, `mobile`, `password`, `conpassword`, `photo_name`, `photo_type`, `photo_tmp`, `occupation`) VALUES
+(1, 'soni', 'female', 'soni@gmail.com', '7894561230', '', '', 'profile.jpg', 'image/jpeg', 'C:wamp64	mpphp4721.tmp', 'user'),
+(2, 'soni', 'female', 'soni@gmail.com', '8957376152', '1234', '1234', 'profile.jpg', 'image/jpeg', 'C:wamp64	mpphpEEEA.tmp', 'Doctor');
 
 --
--- AUTO_INCREMENT for table `contact_requests`
+-- Indexes for dumped tables
 --
-ALTER TABLE `contact_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `customer_register`
+-- Indexes for table `tbl_register`
 --
-ALTER TABLE `customer_register`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `tbl_register`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `dropdown_values`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `dropdown_values`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `enquiries`
+-- AUTO_INCREMENT for table `tbl_register`
 --
-ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `enquiry`
---
-ALTER TABLE `enquiry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `invoices`
---
-ALTER TABLE `invoices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `owner_messages`
---
-ALTER TABLE `owner_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `payments`
---
-ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `properties`
---
-ALTER TABLE `properties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
---
--- AUTO_INCREMENT for table `saved_properties`
---
-ALTER TABLE `saved_properties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
-
---
--- AUTO_INCREMENT for table `save_items`
---
-ALTER TABLE `save_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `scheduled_visits`
---
-ALTER TABLE `scheduled_visits`
+ALTER TABLE `tbl_register`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT for table `services`
+-- Database: `webathon`
 --
-ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `contact_requests`
---
-ALTER TABLE `contact_requests`
-  ADD CONSTRAINT `contact_requests_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `contact_requests_ibfk_2` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`);
-
---
--- Constraints for table `enquiries`
---
-ALTER TABLE `enquiries`
-  ADD CONSTRAINT `enquiries_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `customer_register` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `enquiries_ibfk_2` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `enquiry`
---
-ALTER TABLE `enquiry`
-  ADD CONSTRAINT `enquiry_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `enquiry_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer_register` (`id`);
-
---
--- Constraints for table `payments`
---
-ALTER TABLE `payments`
-  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `save_items`
---
-ALTER TABLE `save_items`
-  ADD CONSTRAINT `save_items_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE;
---
--- Database: `searchbar`
---
-CREATE DATABASE IF NOT EXISTS `searchbar` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `searchbar`;
+CREATE DATABASE IF NOT EXISTS `webathon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `webathon`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Table structure for table `login`
 --
 
-CREATE TABLE `brands` (
+CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `name` varchar(191) NOT NULL
+  `emailaddress` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `brands`
+-- Dumping data for table `login`
 --
 
-INSERT INTO `brands` (`id`, `name`) VALUES
-(1, 'car'),
-(2, 'bike');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `brand_id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `price` varchar(50) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `brand_id`, `name`, `price`, `created_at`) VALUES
-(1, 1, 'BMW\r\n', '200', '2024-08-29 06:02:59'),
-(2, 1, 'Audi', '150', '2024-08-29 06:02:59'),
-(3, 2, 'ktm', '5000', '2024-08-29 06:20:16'),
-(4, 2, 'raven', '', '2024-08-29 06:20:32'),
-(5, 2, 'Raven', '8000', '2024-08-29 06:21:02');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `brands`
---
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- Database: `sms`
---
-CREATE DATABASE IF NOT EXISTS `sms` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `sms`;
+INSERT INTO `login` (`id`, `emailaddress`, `password`) VALUES
+(1, 'soni@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -5786,27 +4314,38 @@ USE `sms`;
 
 CREATE TABLE `register` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `contact` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `name` varchar(50) NOT NULL,
+  `emailaddress` varchar(50) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `contactno` varchar(10) NOT NULL,
+  `address` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`id`, `name`, `email`, `contact`) VALUES
-(1, 'Sohail Akhter', 'sohailktr999@gmail.com', '8981725907'),
-(2, 'OTP', 'soni@genxwebhosting.us', '8005089374'),
-(3, 'OTP', 'soni@genxwebhosting.us', '8005089374'),
-(4, 'OTP', 'soni@genxwebhosting.us', '8005089374'),
-(5, 'ss', 'soni@genxwebhosting.us', '8005089374'),
-(6, 'ss', 'soni@genxwebhosting.us', '8005089374'),
-(7, 'ss', 'soni@genxwebhosting.us', '8005089374');
+INSERT INTO `register` (`id`, `name`, `emailaddress`, `password`, `contactno`, `address`) VALUES
+(2, 'soni', 'soni@gmail.com', '1234', '123456789', 'lko'),
+(3, 'Soni Nishad', 'soninishad7860@gmail.com', '12345678', '7894561230', 'Rustam Vihar Colony Near  \r\n Madina guest house ,Cipet College , Nadarganj  Lucknow'),
+(4, 'soumya', 'soumya@gmail.com', '7894', '7894561230', 'lko'),
+(5, '', 'son@gamil.com', '7894', '123654987', 'lko'),
+(6, 'shakil', 'shakil@gamil.com', '123456', '7894561230', 'bihar'),
+(7, 'som', 'som@gmail.com', '1234', '1234569870', 'lko'),
+(8, 'Soni Nishad', 'soninishad7860@gmail.com', '1234', '1236549870', 'Rustam Vihar Colony Near  \r\n Madina guest house ,Cipet College , Nadarganj  Lucknow'),
+(9, 'Soni Nishad', 'soninishad7860@gmail.com', 'son@gmail.com', '789456123', 'Rustam Vihar Colony Near  \r\n Madina guest house ,Cipet College , Nadarganj  Lucknow'),
+(10, 'Soni Nishad', 'soni@gmail.com', '7894', '789654123', 'Rustam Vihar Colony Near  \r\n Madina guest house ,Cipet College , Nadarganj  Lucknow'),
+(11, 'Soni Nishad', 'soni@gmail.com', '7894', '789654123', 'Rustam Vihar Colony Near  \r\n Madina guest house ,Cipet College , Nadarganj  Lucknow');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `register`
@@ -5819,79 +4358,93 @@ ALTER TABLE `register`
 --
 
 --
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- Database: `student`
+-- Database: `wordpress`
 --
-CREATE DATABASE IF NOT EXISTS `student` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `student`;
+CREATE DATABASE IF NOT EXISTS `wordpress` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `wordpress`;
+--
+-- Database: `zaneshwar`
+--
+CREATE DATABASE IF NOT EXISTS `zaneshwar` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `zaneshwar`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `studentdata`
+-- Table structure for table `learnreg`
 --
 
-CREATE TABLE `studentdata` (
-  `id` int(13) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `age` int(100) NOT NULL,
-  `city` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `studentdata`
---
-
-INSERT INTO `studentdata` (`id`, `name`, `age`, `city`) VALUES
-(1, '', 0, ''),
-(2, '', 0, ''),
-(3, '', 0, ''),
-(4, 'sN', 12, 'lko'),
-(5, 'sN', 12, 'lko');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
+CREATE TABLE `learnreg` (
   `id` int(11) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL
+  `name` varchar(60) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `conpassword` varchar(20) NOT NULL,
+  `address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `learnreg`
 --
 
-INSERT INTO `user` (`id`, `first_name`, `last_name`) VALUES
-(1, 'soni', 'nis'),
-(5, 'soumya', 'nishad'),
-(6, 'r', 'nishad'),
-(7, 'A', 'N'),
-(8, 'abc', 'xyz'),
-(9, 'abc', 'xyz'),
-(10, 'abcd', 'xyz');
+INSERT INTO `learnreg` (`id`, `name`, `gender`, `email`, `password`, `conpassword`, `address`) VALUES
+(7, 'sonu', 'male', 'sonu@gmail.com', '789', '789', 'klm,'),
+(11, 'sonu', 'male', 'sonu@gmail.com', '789', '789', 'klm,'),
+(12, 'abhinash', 'male', 'abhinash@gmail.com', '7410', '7410', 'delhi\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reg`
+--
+
+CREATE TABLE `reg` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `number` varchar(13) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `psw` varchar(50) NOT NULL,
+  `conpsw` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reg`
+--
+
+INSERT INTO `reg` (`id`, `name`, `number`, `email`, `psw`, `conpsw`) VALUES
+(1, 'bittu', '963149545', 'bittu@gmail.com', '1234', '1234'),
+(3, 'mahek', '3216549870', 'mahek@gmail.com', '8520', '8520'),
+(4, 'shakil', '9631495425', 'shakil@gmail.com', '7894', '7894'),
+(6, 'soumya', '7894651320', 'soumya@gmail.com', '4321', '4321'),
+(8, 'nikki', '897465123', 'nikki@gmail.com', '8520', '8520'),
+(9, 'amit', '789654122', 'amit@gmail.com', '101010', '101010');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `studentdata`
+-- Indexes for table `learnreg`
 --
-ALTER TABLE `studentdata`
+ALTER TABLE `learnreg`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `reg`
 --
-ALTER TABLE `user`
+ALTER TABLE `reg`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -5899,21 +4452,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `studentdata`
+-- AUTO_INCREMENT for table `learnreg`
 --
-ALTER TABLE `studentdata`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `learnreg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `reg`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- Database: `test`
---
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `test`;
+ALTER TABLE `reg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
