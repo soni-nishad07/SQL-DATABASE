@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 02:03 PM
+-- Generation Time: Oct 21, 2024 at 08:45 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -89,11 +89,12 @@ CREATE TABLE `bookings` (
 INSERT INTO `bookings` (`id`, `booking_id`, `name`, `email`, `mobile`, `address`, `payment_mode`, `booking_date`, `submit_date`, `service_name`, `booking_status`) VALUES
 (8, 'booking_66b0c6cde02a29.51885704', 'Soni nishad', 'nishadsoni104@gmail.com', '8005089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-21', '2024-08-05', 'Electrician', 'pending'),
 (9, 'booking_66b0c75ed8ca17.65985298', 'Soni ', 'soni104@gmail.com', '8005089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-21', '2024-08-05', 'Water Purifier', 'Cancel'),
-(10, 'booking_66b0c7d05239a2.09091392', 'sumit', 'soni@gmail.com', '9632587410', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-06', '2024-08-05', 'Exterior', 'Complete'),
 (11, 'booking_66b5a72845b452.26310403', 'Soni Nishad', 'soni@genxwebhosting.us', '8005089374', 'Rustam Vihar Colony Near Cipet College', 'cash', '2024-08-30', '2024-08-09', 'Electrician', 'pending'),
 (12, 'booking_66bca2a200ffd7.57618383', 'montu', 'montu@gmail.com', '8520741963', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-16', '2024-08-14', 'kjkbk', 'pending'),
 (13, 'booking_66bca37da92fd2.64188136', 'minu', 'minu@gmail.com', '8965741230', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-08-31', '2024-08-14', '3BHK', 'pending'),
-(14, 'booking_66d19666251da8.96372734', 'ee', 'ss@gmail.com', '2365987410', 'jh', 'cash', '2024-08-15', '2024-08-30', 'service2', 'pending');
+(14, 'booking_66d19666251da8.96372734', 'ee', 'ss@gmail.com', '2365987410', 'jh', 'cash', '2024-08-15', '2024-08-30', 'service2', 'pending'),
+(17, 'booking_6707b8f0eb3b86.14292262', 'Soni nishad', 'nishadsoni104@gmail.com', '0800089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-10-24', '2024-10-10', 'Fabrication', 'pending'),
+(18, 'booking_6707bd5a4ac623.02053932', 'Soni nishad', 'nishadsoni104@gmail.com', '0855089374', 'Ruskam bihar colony nadarganj, lko', 'cash', '2024-11-01', '2024-10-10', 'Plumbing', 'pending');
 
 -- --------------------------------------------------------
 
@@ -133,8 +134,8 @@ CREATE TABLE `customer_register` (
 INSERT INTO `customer_register` (`id`, `name`, `emailaddress`, `phonenumber`, `password`, `date`, `status`, `user_unique_id`) VALUES
 (1, 'soumya', 'soumya@gmail.com', '85962520', '$2y$10$uhRzGcf1.utlvU2GF9gM2.2Qjf2ucAb89XPFzG6omeUR0269RE6Gq', '2024-07-31 08:11:35', 'active', 'user_66a9d597800973.47838801'),
 (3, 'user', 'user@gmail.com', '2147483647', '$2y$10$WVgx7jVJucH.jnFVvEevm.Lr.hVwDNbo2Pw5BbghhZrZsxOqiMBWm', '2024-07-31 08:31:44', 'active', 'user_66a9da5093a2e2.66230031'),
-(4, 'newuser', 'newuser@gmail.com', '4454546565', '$2y$10$UBXDAa6301EIOCdBR4nqiO7aA1kRef6GgHaVtyJjCCrp1SXaplhGK', '2024-08-01 10:12:41', 'active', 'user_66ab43799fd7d6.75380354'),
-(7, 'Soni ', 'soni2@gmmail.com', '8520963147', '$2y$10$tpG8EEH6IdyPrB4Sd.ZwnuuydebDnD982CHVZeujkPsKUGBv.oMQ2', '2024-08-09 11:38:05', 'active', 'user_66b5e37d6fa6e5.60555237'),
+(4, 'newuser', 'nuser@gmail.com', '4454546565', '$2y$10$UBXDAa6301EIOCdBR4nqiO7aA1kRef6GgHaVtyJjCCrp1SXaplhGK', '2024-08-01 10:12:41', 'active', 'user_66ab43799fd7d6.75380354'),
+(7, 'Soni ', 's@gmmail.com', '8520963147', '$2y$10$tpG8EEH6IdyPrB4Sd.ZwnuuydebDnD982CHVZeujkPsKUGBv.oMQ2', '2024-08-09 11:38:05', 'active', 'user_66b5e37d6fa6e5.60555237'),
 (8, 'Soni nishad', 'nishadsoni104@gmail.com', '08005089374', '$2y$10$l5MxHRcp3K8RiNgQWw8B4Ow1eJg85lqEu4c0375w24QwQmTR4hTpS', '2024-08-14 12:57:07', 'active', 'user_66bc8d836c7192.83988861');
 
 -- --------------------------------------------------------
@@ -182,13 +183,12 @@ CREATE TABLE `enquiries` (
 --
 
 INSERT INTO `enquiries` (`id`, `user_id`, `property_id`, `message`, `created_at`) VALUES
-(1, 4, 1, 'jkhkjhkjhkjh kjhkjhkhkj kjh jkhkjhk', '2024-08-07 14:15:22'),
 (2, 4, 2, 'test test hjhjhhhj hhggjhjhkjbvn', '2024-08-07 18:18:10'),
 (4, 1, 16, 'hyy new userrrr', '2024-08-07 18:23:24'),
 (5, 1, 2, 'hyyy test test hhyyy hhyy tset tset', '2024-08-07 18:24:42'),
 (8, 3, 3, 'hgvcgcg   hgvgvy   hggggu  hgghggh uygyg ', '2024-09-02 19:03:32'),
-(9, 3, 1, 'hjfhggh  jhghjg  jhgjhgj gygug jhggj ggfhggffgh ', '2024-09-13 23:27:05'),
-(10, 3, 9, 'hlo hyy hyyy hyyy ', '2024-10-04 14:02:14');
+(10, 3, 9, 'hlo hyy hyyy hyyy ', '2024-10-04 14:02:14'),
+(11, 3, 16, 'jhvjhvgjvgjvghvgvgvhgvgvgvgjvjgvjcgcgcgj', '2024-10-10 17:18:12');
 
 -- --------------------------------------------------------
 
@@ -209,7 +209,6 @@ CREATE TABLE `enquiry` (
 --
 
 INSERT INTO `enquiry` (`id`, `property_id`, `user_id`, `message`, `created_at`) VALUES
-(16, 1, 4, 'mhbjhbjhb kbkb', '2024-08-03 11:35:26'),
 (20, 8, 1, 'hghgghgfchg fhftcyy vhg', '2024-08-03 12:38:18'),
 (21, 2, 4, 'User ID: 4 has sent an enquiry for Property ID: 2.', '2024-08-07 11:43:15');
 
@@ -326,15 +325,14 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`id`, `bhk_type`, `property_type`, `build_up_area`, `property_age`, `floor`, `total_floor`, `city`, `available_for`, `expected_rent`, `expected_deposit`, `maintenance`, `available_from`, `preferred_tenants`, `furnishing`, `parking`, `description`, `bathrooms`, `balcony`, `water_supply`, `amenities`, `file_upload`, `availability`, `start_time`, `end_time`, `available_all`, `created_at`, `user_id`, `property_status`, `date`, `approval_status`) VALUES
-(1, '1BHK', 'Building', 2000, '2 years', 2, 4, 'kanpur,  Uttar Pradesh, India', 'Only Lease', 5000.00, 1000.00, 'Maintenance Included', '2024-07-04', 'Bachelor Female', 'Semi-Furnished', 'car', 'hgfghfjhg', 2, 2, 'Municipal', 'Power Backup,House Keeping,Club House', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai (1).jpg,../uploads/house-isolated-field (1).jpg,../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', 'Weekday (Mon-Fri)', '11:48:00', '00:00:00', 0, '2024-07-30 11:44:35', 1, 'Spotlight', '2024-07-31', 'Approved'),
 (2, '4BHK', 'Building', 2000, '5', 2, 5, 'Hong Kong', 'Sale,Only Lease', 800.00, 78.00, NULL, '2024-09-18', NULL, 'Fully-Furnished', NULL, 'sonini', 1, 1, 'Municipal', 'House Keeping', '../uploads/hiring.png', '', '00:00:00', '00:00:00', 1, '2024-07-15 11:55:34', 2, 'Pending', '2024-07-31', 'Pending'),
-(3, '3BHK', 'Site', 2000, '10', 5, 10, 'Delhi, India', 'Rent', 500000.00, 10000.00, 'Maintenance Included', '2024-07-10', 'Family', 'Unfurnished', 'all', 'hgfjygju', 2, 3, 'Municipal', 'Play Area,Club House,Internet Service', '../uploads/1 (10).jpg', 'Weekend (Sat-Sun)', '00:00:00', '00:00:00', 0, '2024-07-31 12:03:42', 3, 'Focus', '2024-07-31', 'Rejected'),
-(8, 'kjkbk', 'Commercial', 0, '65', 0, 5, 'Lucknow, Uttar Pradesh, India', 'for rent', 50.00, 4.00, '', '2024-09-01', 'company', 'kjbk', '', 'jbkbuk', 1, 1, 'borewell', 'Gym', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg,../uploads/1 (10).jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:07:29', 4, 'Spotlight', '2024-08-01', 'Pending'),
-(9, '2 bhk', 'Villa', 500, '5', 0, 0, 'Kanpur, Uttar Pradesh, India', 'Rent', 20000.00, 0.00, '', '2024-08-09', '', 'Fully-Furnished', '', 'hjb', 1, 1, 'all', 'Gym', '../uploads/house-isolated-field.jpg,../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:09:03', 4, 'Focus', '2024-08-01', 'Pending'),
-(15, '2BHK', 'Site', 5000, '5', 4, 10, 'Mumbai, Maharashtra, India', '', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', '', '', '', '00:00:00', '00:00:00', 0, '2024-08-06 17:33:33', 4, 'Featured', '2024-08-06', 'Pending'),
-(16, '3BHK', 'Building', 200, '5', 4, 4, 'Karnataka', 'Sale', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', 'Gym, Power Backup', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', 'Weekday (Mon-Fri)', '19:56:00', '21:57:00', 0, '2024-08-06 17:57:09', 4, 'Featured', '2024-08-06', 'Pending'),
-(32, '2BHK', 'Building', 200, '3', 10, 2, 'India', 'Sale', 0.00, 0.00, '', '0000-00-00', 'Family', '', '', '', 1, 1, '', 'Gym,  Visitor Parking', '../uploads/house-isolated-field.jpg', 'Weekday (Mon-Fri)', '00:00:00', '16:55:00', 0, '2024-09-03 16:52:30', 3, 'Trending', '2024-09-03', 'Pending'),
-(33, 'IndependentHouse', 'Villa', 2000, '2', 4, 5, 'HSR Layout, Bengaluru, Karnataka, India', 'Rent', 0.00, 0.00, '', '2024-10-10', '', 'Semi-Furnished', '', 'k', 1, 1, 'Borewell', 'Gym,Power Backup', '../uploads/IMG_20240923_182822_516.jpg,../uploads/IMG_20240923_182819_597.jpg,../uploads/IMG_20240923_182818_375.jpg,../uploads/IMG_20240923_182804_738.jpg,../uploads/IMG_20240923_182824_252.jpg,../uploads/IMG_20240923_182807_959.jpg', '', '00:00:00', '00:00:00', 0, '2024-09-06 11:20:52', 3, 'Trending', '2024-09-06', 'Pending');
+(3, '3BHK', 'Site', 2000, '10', 5, 10, 'Delhi, India', 'Rent', 500000.00, 10000.00, 'Maintenance Included', '2024-07-10', 'Family', 'Unfurnished', 'all', 'hgfjygju', 2, 3, 'Municipal', 'Play Area,Club House,Internet Service', '../uploads/1 (10).jpg', 'Weekend (Sat-Sun)', '00:00:00', '00:00:00', 0, '2024-07-31 12:03:42', 3, 'Focus', '2024-07-31', 'Approved'),
+(8, 'kjkbk', 'Commercial', 0, '65', 0, 5, 'Lucknow, Uttar Pradesh, India', 'for rent', 50.00, 4.00, '', '2024-09-01', 'company', 'kjbk', '', 'jbkbuk', 1, 1, 'borewell', 'Gym', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg,../uploads/1 (10).jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:07:29', 4, 'Spotlight', '2024-08-01', 'Rejected'),
+(9, '2 bhk', 'Villa', 500, '5', 0, 0, 'Kanpur, Uttar Pradesh, India', 'Rent', 20000.00, 0.00, '', '2024-08-09', '', 'Fully-Furnished', '', 'hjb', 1, 1, 'all', 'Gym', '../uploads/house-isolated-field.jpg,../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', '', '00:00:00', '00:00:00', 0, '2024-08-01 15:09:03', 4, 'Focus', '2024-08-01', 'Rejected'),
+(15, '2BHK', 'Site', 5000, '5', 4, 10, 'Mumbai, Maharashtra, India', '', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', '', '', '', '00:00:00', '00:00:00', 0, '2024-08-06 17:33:33', 4, 'Featured', '2024-08-06', 'Rejected'),
+(16, '3BHK', 'Building', 200, '5', 4, 4, 'Karnataka', 'Sale', 0.00, 0.00, '', '0000-00-00', '', '', '', '', 1, 1, '', 'Gym, Power Backup', '../uploads/modern-residential-district-with-green-roof-balcony-generated-by-ai.jpg', 'Weekday (Mon-Fri)', '19:56:00', '21:57:00', 0, '2024-08-06 17:57:09', 4, 'Featured', '2024-08-06', 'Approved'),
+(32, '2BHK', 'Building', 200, '3', 10, 2, 'India', 'Sale', 10.00, 6.00, '', '2024-10-29', 'Family', 'Semi-Furnished', '', 'nbbh', 1, 1, 'Borewell', 'Gym,Visitor Parking', '../uploads/right-to-property-is-a-legal-right.jpg,../uploads/istockphoto-1409298953-612x612.jpg,../uploads/photo-1560518883-ce09059eeffa.jpeg,../uploads/istockphoto-1319269543-612x612.jpg', 'Weekday (Mon-Fri)', '00:00:00', '16:55:00', 0, '2024-09-03 16:52:30', 3, 'Trending', '2024-09-03', 'Rejected'),
+(33, 'IndependentHouse', 'Villa', 2000, '2', 4, 5, 'HSR Layout, Bengaluru, Karnataka, India', 'Rent', 23.00, 0.00, '', '2024-10-10', '', 'Semi-Furnished', '', 'k', 1, 1, 'Borewell', 'Gym,Power Backup', '../uploads/IMG_20240923_182822_516.jpg,../uploads/IMG_20240923_182819_597.jpg,../uploads/IMG_20240923_182818_375.jpg,../uploads/IMG_20240923_182804_738.jpg,../uploads/IMG_20240923_182824_252.jpg,../uploads/IMG_20240923_182807_959.jpg', '', '00:00:00', '00:00:00', 0, '2024-09-06 11:20:52', 3, 'Trending', '2024-09-06', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -354,7 +352,6 @@ CREATE TABLE `saved_properties` (
 --
 
 INSERT INTO `saved_properties` (`id`, `user_id`, `property_id`, `created_at`) VALUES
-(76, 3, 3, '2024-08-01 07:44:37'),
 (77, 4, 1, '2024-08-01 09:06:41'),
 (78, 1, 9, '2024-08-01 17:23:41'),
 (80, 4, 8, '2024-08-03 12:51:13'),
@@ -379,8 +376,7 @@ CREATE TABLE `save_items` (
 
 INSERT INTO `save_items` (`id`, `user_id`, `property_id`) VALUES
 (11, 4, 8),
-(13, 4, 2),
-(15, 2, 1);
+(13, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -419,7 +415,8 @@ INSERT INTO `services` (`id`, `service_img`, `service_name`) VALUES
 (8, '66d2c99bc8234.png', 'Plumbing'),
 (9, '66d2c9b34cbee.png', 'Fabrication'),
 (10, '66d2c9cf97717.png', 'Carpenter'),
-(11, '66d2c9ede0c9a.png', 'Lift Service');
+(11, '66d2c9ede0c9a.png', 'Lift Service'),
+(12, '6707b28155517.jpg', 'demo');
 
 -- --------------------------------------------------------
 
@@ -490,8 +487,8 @@ ALTER TABLE `enquiries`
 --
 ALTER TABLE `enquiry`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `property_id` (`property_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `enquiry_ibfk_1` (`property_id`);
 
 --
 -- Indexes for table `invoices`
@@ -571,7 +568,7 @@ ALTER TABLE `bhk_searches`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `contact_requests`
@@ -595,7 +592,7 @@ ALTER TABLE `dropdown_values`
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `enquiry`
@@ -625,7 +622,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `saved_properties`
@@ -649,7 +646,7 @@ ALTER TABLE `scheduled_visits`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -679,7 +676,7 @@ ALTER TABLE `enquiries`
 -- Constraints for table `enquiry`
 --
 ALTER TABLE `enquiry`
-  ADD CONSTRAINT `enquiry_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`),
+  ADD CONSTRAINT `enquiry_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `enquiry_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `customer_register` (`id`);
 
 --
